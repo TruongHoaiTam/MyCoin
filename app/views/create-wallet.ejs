@@ -5,9 +5,11 @@
             <div class="title-popover">
                 <h1 style="color:green">Create Your Password</h1>
             </div>
-            <form class="user-input">
+            <form class="user-input" action="/create-wallet" method="post">
                 <div class="mew-custom-form mew-custom-form__password">
-                    <div class="user-input-field"><input type="password" name="password" autocomplete="off" class="strong" aria-required="true" aria-invalid="false"></div>
+                    <div class="user-input-field">
+                        <input type="password" name="password" autocomplete="off" class="strong" aria-required="true" aria-invalid="false">
+                    </div>
                 </div>
                 <button type="submit" class="large-round-button-green-filled next-button"> Next</button>
             </form>
