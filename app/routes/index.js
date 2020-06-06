@@ -50,8 +50,16 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/access-my-wallet', (req, res) => {
-    if (req.session.user !== undefined) res.render(__path_views + '/access-my-wallet');
+    if (req.session.user !== undefined) res.render(__path_views + '/access-my-wallet', {
+        user: req.session.user
+    });
     else res.redirect('/login');
 })
+
+
+router.post('/send-transaction', (req, res) => {
+    console.log('send')
+})
+
 
 module.exports = router;
