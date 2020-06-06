@@ -10,7 +10,8 @@
                 <div class="mew-custom-form mew-custom-form__password">
                     <div class="user-input-field">
                         <input type="password" name="password" autocomplete="off" class="strong" aria-required="true" aria-invalid="false" placeholder="password">
-                        <input type="file" name="keystore" class=" large-round-button-green-filled next-button "> Keystore File
+                        <input type="file" name="file" class=" large-round-button-green-filled next-button " id="file"> Keystore File
+                        <input type="hidden" name="keystore" id="keystore">
                     </div>
                 </div>
                 <input type="submit" class="large-round-button-green-filled next-button" value="Send"></input>
@@ -18,3 +19,16 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.getElementById('file')
+        .addEventListener('change', function() {
+
+            var fr = new FileReader();
+            fr.onload = function() {
+                document.getElementById('keystore')
+                    .value = fr.result;
+            }
+
+            fr.readAsText(this.files[0]);
+        })
+</script>
